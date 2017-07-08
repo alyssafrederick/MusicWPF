@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlyssaFrederickMusic"
+        xmlns:Properties="clr-namespace:AlyssaFrederickMusic.Properties" x:Class="AlyssaFrederickMusic.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="750">
+    <Grid Background="Black" MouseMove="Grid_MouseMove">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="579*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="artistImage" Height="255" Margin="30,115,0,0" Width="345" VerticalAlignment="Top" HorizontalAlignment="Left" Stretch="UniformToFill" Grid.ColumnSpan="3"/>
+        <Label x:Name="artistNameLabel" Content=" " Height="50" Margin="10,26,0,0" VerticalAlignment="Top" Width="722" Foreground="White" FontFamily="Andy" FontSize="26.667" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <ComboBox x:Name="listenComboBox" HorizontalAlignment="Left" Height="19" Margin="80,375,0,0" VerticalAlignment="Top" Width="189" IsSynchronizedWithCurrentItem="False" Cursor="Arrow" FontFamily="Andy" FontSize="14" DragLeave="listenComboBox_DragLeave" Grid.ColumnSpan="3"/>
+        <Canvas x:Name="searchCanvas" HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="200" Margin="-200,0,0,0">
+            <Rectangle x:Name="searchPanel" Fill="#FF060113" HorizontalAlignment="Left" Height="469" Margin="0,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="201"/>
+            <Label x:Name="searchLabel" Content="search" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="133" Foreground="White" FontSize="21.333" FontFamily="Andy" Canvas.Left="25" Canvas.Top="7"/>
+            <ComboBox x:Name="searchComboBox" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="172" IsSynchronizedWithCurrentItem="False" Cursor="Arrow" FontFamily="Andy" FontSize="14" IsEditable="True" KeyDown="searchComboBox_KeyDown" TextInput="searchComboBox_TextInput" Canvas.Left="15" Canvas.Top="42"/>
+        </Canvas>
+        <Image x:Name="playVSpause" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="17" Margin="111,376,0,0" Grid.Column="2" Source="Resources/play.png" MouseDown="playVSpause_MouseDown">
+            <Image.OpacityMask>
+                <ImageBrush Stretch="None" ImageSource="Resources/play.png"/>
+            </Image.OpacityMask>
+            <Image.DataContext>
+                <Properties:Resources/>
+            </Image.DataContext>
+        </Image>
+        <Label x:Name="upcomingEventsLabel" Content="upcoming events" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="21.333" FontFamily="Andy" Margin="318,98,0,0" Grid.Column="2"/>
+        <Label x:Name="upcomingEvents" Content="" HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="321" Foreground="White" FontSize="18.667" FontFamily="Andy" Margin="233,140,0,0" Grid.Column="2"/>
+    </Grid>
+</Window>
